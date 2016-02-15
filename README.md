@@ -2,7 +2,7 @@
 
 # sails-hook-orm-mongorito
 
-A Sails.js hook to override build-in Waterline ORM by Mongorito.
+A Sails.js hook to override built-in Waterline ORM by Mongorito.
 
 > **Important**
 >
