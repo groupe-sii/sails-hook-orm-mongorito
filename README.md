@@ -2,7 +2,7 @@
 
 # sails-hook-orm-mongorito
 
-An hook to override default Waterline orm in Sails.js with Mongorito.
+A Sails.js hook to override build-in Waterline ORM by Mongorito.
 
 > **Important**
 >
@@ -35,13 +35,13 @@ Then, you also need to update your `.sailsrc` file to disable the Waterline rela
 To connect to Mongorito, create a new connection in `/config/connections.js` file:
 
 ```json
-mongorito: {
-  adapter: 'mongorito',
-  host: 'localhost',
-  port: 27017,
-  user: 'test',
-  password: 'testest',
-  database: 'test'
+"mongorito": {
+  "adapter": "mongorito",
+  "host": "localhost",
+  "port": 27017,
+  "user": "username",
+  "password": "password",
+  "database": "mydatabase"
 }
 ```
 
@@ -60,7 +60,7 @@ connection: 'mongorito'
 This hook is loading models according to standard Sails.js conventions. Therefore, you models should be located in `api/models/*.js` in order to be located and loaded by this hook.
 The model definition must follow the Mongorito ES-6 syntax with a small difference, your model mustn't extend from `Model` but from `MongoritoModel` which will be globally declared by the hook.
 
-A model examples (`api/models/Post.js`):
+A model example (`api/models/Post.js`):
 
 ```js
 'use strict';
@@ -93,8 +93,11 @@ MongoritoController.index = function (req, res) {
   });
 
   co(function* () {
+
+    // Saving the document
     yield post.save();
 
+    // Querying all Post documents
     return res.json(yield Post.all());
   });
 };
@@ -102,7 +105,7 @@ MongoritoController.index = function (req, res) {
 module.exports = MongoritoController;
 ```
 
-> **Note:**
+> **Note**
 >
 > To use the ES-6 syntax, you will always have to use the strict mode by calling `'use strict'` in your scripts or by launching your node.js server in strict mode `node --use_strict`.
 
