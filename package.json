@@ -1,0 +1,36 @@
+{
+  "name": "sails-hook-orm-mongorito",
+  "version": "1.0.0",
+  "description": "An hook to override default Waterline orm in Sails.js with Mongorito.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/groupe-sii/sails-hook-orm-mongorito.git"
+  },
+  "keywords": [
+    "sails",
+    "mongorito",
+    "orm",
+    "override",
+    "hook",
+    "orm-hook"
+  ],
+  "author": "Valentin GOT",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/groupe-sii/sails-hook-orm-mongorito/issues"
+  },
+  "homepage": "https://github.com/groupe-sii/sails-hook-orm-mongorito#readme",
+  "dependencies": {
+    "co": "^4.6.0",
+    "lodash": "^4.3.0",
+    "mongorito": "^1.4.6"
+  },
+  "sails": {
+    "isHook": true,
+    "hookName": "orm-mongorito"
+  }
+}
