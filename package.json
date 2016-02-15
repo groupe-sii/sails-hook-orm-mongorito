@@ -1,7 +1,7 @@
 {
   "name": "sails-hook-orm-mongorito",
   "version": "1.0.0",
-  "description": "A Sails.js hook to override build-in Waterline ORM by Mongorito.",
+  "description": "A Sails.js hook to override built-in Waterline ORM by Mongorito.",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
